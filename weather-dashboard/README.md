@@ -114,14 +114,6 @@ To test the application:
 6. Change units to Fahrenheit - temperatures should update
 7. Search for invalid city - error message should appear
 
-## Screenshots
-
-### Light Theme
-![Light Theme](screenshots/light-theme.png)
-
-### Dark Theme
-![Dark Theme](screenshots/dark-theme.png)
-
 ## Author
 
 Created as part of learning JavaScript API integration and Local Storage.
@@ -129,3 +121,4 @@ Created as part of learning JavaScript API integration and Local Storage.
 ## Credits
 
 - Weather data provided by [Open-Meteo](https://open-meteo.com/) (Free API)
+

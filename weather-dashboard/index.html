@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weather Dashboard - Check current weather and 5-day forecast for any city">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="header">
+            <h1>🌤️ Weather Dashboard</h1>
+            <p>Check weather for any city worldwide</p>
+        </header>
+
+        <div class="search-section">
+            <form id="search-form" class="search-form">
+                <input type="text" id="city-input" placeholder="Enter city name..." aria-label="City name" required>
+                <button type="submit" id="search-btn">Search</button>
+            </form>
+        </div>
+
+
+        <div class="settings-section">
+            <div class="setting-item">
+                <label for="unit-toggle">Temperature Unit:</label>
+                <select id="unit-toggle">
+                    <option value="celsius">Celsius (°C)</option>
+                    <option value="fahrenheit">Fahrenheit (°F)</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="theme-toggle">Theme:</label>
+                <select id="theme-toggle">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <div id="error-message" class="error-message hidden">
+            <p id="error-text"></p>
+        </div>
+        <section id="current-weather" class="current-weather hidden">
+            <h2>Current Weather</h2>
+            <div class="weather-card main-card">
+                <div class="weather-header">
+                    <h3 id="city-name">--</h3>
+                    <span id="weather-icon" class="weather-emoji">🌡️</span>
+                </div>
+                <div class="weather-info">
+                    <p class="temperature" id="temperature">--°</p>
+                    <p class="description" id="description">--</p>
+                </div>
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="label">Humidity</span>
+                        <span id="humidity">--%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Wind Speed</span>
+                        <span id="wind-speed">-- km/h</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Feels Like</span>
+                        <span id="feels-like">--°</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="forecast" class="forecast hidden">
+            <h2>5-Day Forecast</h2>
+            <div id="forecast-cards" class="forecast-cards">
+
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Data provided by <a href="https://open-meteo.com/" target="_blank">Open-Meteo</a> (Free, No API Key
+                Required)</p>
+        </footer>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
